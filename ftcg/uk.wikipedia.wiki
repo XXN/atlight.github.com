@@ -1,0 +1,121 @@
+﻿# For the Common Good
+# Local wiki data for Ukrainian Wikipedia
+
+LocalDomain=uk.wikipedia
+
+LocalFtcgPage=w:en:WP:FTCG
+
+Category1=Файли, що треба перенести до Вікісховища
+Category2=Файли, що треба перенести до Вікісховища з категорією‎
+Category3=Зображення, що мають дозвіл в OTRS
+DefaultCategory=1
+
+NowCommonsTag=NowCommons
+
+# The deletion summary used when deleting a file after transfer (option available
+# to admins only) - link to a relevant deletion policy if possible
+NowCommonsDeletionSummary=[[ВП:КШВ#Ф8|Ф8]]: файл доступний у [[:commons:|Вікісховищі]]
+
+# Some edit summaries to translate into your wiki's language
+NowCommonsAddingTagEditSummary={{NowCommons}} 
+NowCommonsReplacingTagEditSummary=Шаблон {{Move to Commons}} заменен на шаблон {{NowCommons}}
+
+Information=Information
+Description=
+Date=
+Source=
+Author=
+Permission=
+Other_versions=
+
+Summary=Опис файлу
+Licensing=Ліцензування
+
+CategoryNamespace=Категорія
+
+CopyToCommonsRegex={{(Перенести до Вікісховища|Move to Commons|Copy to Wikimedia Commons|Move manual)[^}]*}}\n?
+
+[PotentialProblem]
+IfRegex={{(db\-|Уд\-)
+Message=Похоже, что файл вынесен на удаление.
+
+[PotentialProblem]
+IfContains={{disputed
+Message=Похоже, что файл вынесен на удаление.
+
+[PotentialProblem]
+IfContains={{no license
+Message=У файла нет лицензии.
+
+[PotentialProblem]
+IfContains={{без ліцензії
+Message=У файла нет лицензии.
+
+[PotentialProblem]
+IfContains={{no source
+Message=У файла нет источника.
+
+[PotentialProblem]
+IfContains={{no permission
+Message=У файла нет разрешения автора.
+
+[PotentialProblem]
+IfContains={{no author
+Message=У файла не указан автор.
+
+[PotentialProblem]
+IfContains={{Обґрунтування добропорядного використання
+Message=Несвободные файлы нельзя загружать на Викисклад.
+
+[PotentialProblem]
+IfContains={{Fair use in
+Message=Несвободные файлы нельзя загружать на Викисклад.
+
+[PotentialProblem]
+IfContains={{логотип
+Message=Несвободные файлы нельзя загружать на Викисклад.
+
+[PotentialProblem]
+IfContains={{NoCommons
+Message=Похоже, что файл не стоит переносить на Викисклад.
+
+[PotentialProblem]
+IfContains={{NowCommons
+Message=Похоже, что файл уже доступний у Вікісховищі.
+
+[PotentialProblem]
+IfContains={{FoP
+Message=Из-за [[ВП:СП|несвободы панорамы]] файл не стоит переносить.
+
+[Replacement]
+LookFor={{GFDL-1.1-plus([^\}]*)}}
+ReplaceWith={{GFDL-1.1,1.2,1.3}}
+
+[Replacement]
+LookFor={{PD-user([^\}]*)}}
+ReplaceWith={{PD-user-w|project=wikipedia|language=uk|user=%%OriginalUploader%%}}
+
+[Replacement]
+LookFor== *Власна робота.?
+ReplaceWith== {{own work by original uploader}}
+
+[Replacement]
+LookFor={{own}}
+ReplaceWith={{own work by original uploader}}
+
+# No need for "See below"
+[Replacement]
+LookFor== *див\. нижче.?
+ReplaceWith==
+
+[SelfLicenseReplacement]
+LookFor={{PD-self([^\}]*)}}
+ReplaceWith={{PD-user-w|project=wikipedia|language=uk|user=%%OriginalUploader%%}}
+
+[SelfLicenseReplacement]
+LookFor={{GFDL-self([^\}]*)}}
+ReplaceWith={{GFDL-user|%%OriginalUploader%%|b$1}}
+
+[SelfLicenseReplacement]
+LookFor={{self([^\}]*)}}
+ReplaceWith={{self$1|author=[[%%InterwikiLinkPrefix%%:%%OriginalUploader%%|]]}}
